@@ -24,9 +24,9 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller.forward();
 
-    // Navigate to home screen after animation
+    // Navigate to login screen after animation
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, '/home');
+      Navigator.pushReplacementNamed(context, '/login');
     });
   }
 
@@ -45,7 +45,10 @@ class _SplashScreenState extends State<SplashScreen>
           opacity: _animation,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [Image.asset('assets/logo.png', width: 200, height: 200)],
+            children: [
+              Image.asset('assets/logo.png', width: 200, height: 200),
+              const SizedBox(height: 20),
+            ],
           ),
         ),
       ),
