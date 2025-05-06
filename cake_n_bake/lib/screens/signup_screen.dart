@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
+
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  String? selectedUserType;
+  final List<String> userTypes = ['User', 'Shop'];
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +34,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 const Text(
-                  'Welcome Back!',
+                  'Create Account',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -35,6 +43,25 @@ class LoginScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 40),
+                // Name Field
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Name',
+                    prefixIcon: const Icon(Icons.person_outline),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Color(0xFFdccccd)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Color(0xFFff6b6b)),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
                 // Email Field
                 TextField(
                   decoration: InputDecoration(
@@ -74,11 +101,59 @@ class LoginScreen extends StatelessWidget {
                   ),
                   obscureText: true,
                 ),
+                const SizedBox(height: 16),
+                // Confirm Password Field
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Confirm Password',
+                    prefixIcon: const Icon(Icons.lock_outline),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Color(0xFFdccccd)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: const BorderSide(color: Color(0xFFff6b6b)),
+                    ),
+                  ),
+                  obscureText: true,
+                ),
+                const SizedBox(height: 16),
+                // User Type Dropdown
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: const Color(0xFFdccccd)),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton<String>(
+                      value: selectedUserType,
+                      isExpanded: true,
+                      hint: const Text('Select User Type'),
+                      items:
+                          userTypes.map((String type) {
+                            return DropdownMenuItem<String>(
+                              value: type,
+                              child: Text(type),
+                            );
+                          }).toList(),
+                      onChanged: (String? newValue) {
+                        setState(() {
+                          selectedUserType = newValue;
+                        });
+                      },
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 24),
-                // Login Button
+                // Sign Up Button
                 ElevatedButton(
                   onPressed: () {
-                    // TODO: Implement login functionality
+                    // TODO: Implement sign up functionality
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFff6b6b),
@@ -89,36 +164,25 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   child: const Text(
-                    'Login',
+                    'Sign Up',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ),
                 const SizedBox(height: 16),
-                // Forgot Password
-                TextButton(
-                  onPressed: () {
-                    // TODO: Implement forgot password functionality
-                  },
-                  child: const Text(
-                    'Forgot Password?',
-                    style: TextStyle(color: Color(0xFFff6b6b)),
-                  ),
-                ),
-                const SizedBox(height: 40),
-                // Sign Up Section
+                // Login Link
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      "Haven't an account? ",
+                      'Already have an account? ',
                       style: TextStyle(color: Color(0xFF94949c)),
                     ),
                     TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/signup');
+                        Navigator.pop(context);
                       },
                       child: const Text(
-                        'Sign Up',
+                        'Login',
                         style: TextStyle(
                           color: Color(0xFFff6b6b),
                           fontWeight: FontWeight.bold,
