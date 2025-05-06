@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1029837436106",
+    "project_id": "cakenbake-e9912",
+    "storage_bucket": "cakenbake-e9912.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029837436106:android:e6553477ee5c061b38b033",
+        "android_client_info": {
+          "package_name": "com.example.cake_n_bake"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlX-AgplDcwJQ8-I8DI-CHQOS5OFSc99g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

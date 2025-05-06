@@ -15,10 +15,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -31,41 +28,52 @@ class DefaultFirebaseOptions {
     }
   }
 
-  // You'll need to replace these with your actual Firebase configuration
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'YOUR-WEB-API-KEY',
-    appId: 'YOUR-WEB-APP-ID',
-    messagingSenderId: 'YOUR-SENDER-ID',
-    projectId: 'YOUR-PROJECT-ID',
-    authDomain: 'YOUR-AUTH-DOMAIN',
-    storageBucket: 'YOUR-STORAGE-BUCKET',
+    apiKey: 'AIzaSyBLYYqbMtrEeeU1vDT2k0DQq24AVerLAYs',
+    appId: '1:1029837436106:web:8708b942d55a24db38b033',
+    messagingSenderId: '1029837436106',
+    projectId: 'cakenbake-e9912',
+    authDomain: 'cakenbake-e9912.firebaseapp.com',
+    storageBucket: 'cakenbake-e9912.firebasestorage.app',
+    measurementId: 'G-8K0618E9VR',
   );
 
+  // You'll need to replace these with your actual Firebase configuration
+
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'YOUR-ANDROID-API-KEY',
-    appId: 'YOUR-ANDROID-APP-ID',
-    messagingSenderId: 'YOUR-SENDER-ID',
-    projectId: 'YOUR-PROJECT-ID',
-    storageBucket: 'YOUR-STORAGE-BUCKET',
+    apiKey: 'AIzaSyAlX-AgplDcwJQ8-I8DI-CHQOS5OFSc99g',
+    appId: '1:1029837436106:android:e6553477ee5c061b38b033',
+    messagingSenderId: '1029837436106',
+    projectId: 'cakenbake-e9912',
+    storageBucket: 'cakenbake-e9912.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'YOUR-IOS-API-KEY',
-    appId: 'YOUR-IOS-APP-ID',
-    messagingSenderId: 'YOUR-SENDER-ID',
-    projectId: 'YOUR-PROJECT-ID',
-    storageBucket: 'YOUR-STORAGE-BUCKET',
-    iosClientId: 'YOUR-IOS-CLIENT-ID',
-    iosBundleId: 'YOUR-IOS-BUNDLE-ID',
+    apiKey: 'AIzaSyBgDwFagv90JUyrrSWLg7_7IPvNVTrXHDw',
+    appId: '1:1029837436106:ios:f3892530a20492de38b033',
+    messagingSenderId: '1029837436106',
+    projectId: 'cakenbake-e9912',
+    storageBucket: 'cakenbake-e9912.firebasestorage.app',
+    iosBundleId: 'com.example.cakeNBake',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'YOUR-MACOS-API-KEY',
-    appId: 'YOUR-MACOS-APP-ID',
-    messagingSenderId: 'YOUR-SENDER-ID',
-    projectId: 'YOUR-PROJECT-ID',
-    storageBucket: 'YOUR-STORAGE-BUCKET',
-    iosClientId: 'YOUR-MACOS-CLIENT-ID',
-    iosBundleId: 'YOUR-MACOS-BUNDLE-ID',
+    apiKey: 'AIzaSyBgDwFagv90JUyrrSWLg7_7IPvNVTrXHDw',
+    appId: '1:1029837436106:ios:f3892530a20492de38b033',
+    messagingSenderId: '1029837436106',
+    projectId: 'cakenbake-e9912',
+    storageBucket: 'cakenbake-e9912.firebasestorage.app',
+    iosBundleId: 'com.example.cakeNBake',
   );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyBLYYqbMtrEeeU1vDT2k0DQq24AVerLAYs',
+    appId: '1:1029837436106:web:aafa7cda335f341438b033',
+    messagingSenderId: '1029837436106',
+    projectId: 'cakenbake-e9912',
+    authDomain: 'cakenbake-e9912.firebaseapp.com',
+    storageBucket: 'cakenbake-e9912.firebasestorage.app',
+    measurementId: 'G-ZFJ9ZQHVEP',
+  );
+
 }
