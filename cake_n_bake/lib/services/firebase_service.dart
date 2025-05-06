@@ -28,7 +28,6 @@ class FirebaseService {
         'name': name,
         'email': email,
         'userType': userType,
-        'createdAt': FieldValue.serverTimestamp(),
       });
 
       return userCredential;
@@ -87,7 +86,6 @@ class FirebaseService {
           'name': name,
           if (phone != null) 'phone': phone,
           if (address != null) 'address': address,
-          'updatedAt': FieldValue.serverTimestamp(),
         });
       }
     } catch (e) {
