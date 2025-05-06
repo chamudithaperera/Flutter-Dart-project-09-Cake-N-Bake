@@ -7,25 +7,94 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Welcome Back!',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Color(0xFFff6b6b),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const Text(
+                'Welcome Back!',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFFff6b6b),
+                ),
+                textAlign: TextAlign.center,
               ),
-            ),
-            const SizedBox(height: 40),
-            // Placeholder for login form
-            const Text(
-              'Login Form',
-              style: TextStyle(fontSize: 16, color: Colors.grey),
-            ),
-          ],
+              const SizedBox(height: 40),
+              // Email Field
+              TextField(
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                  prefixIcon: const Icon(Icons.email_outlined),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: const BorderSide(color: Color(0xFFdccccd)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: const BorderSide(color: Color(0xFFff6b6b)),
+                  ),
+                ),
+                keyboardType: TextInputType.emailAddress,
+              ),
+              const SizedBox(height: 16),
+              // Password Field
+              TextField(
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  prefixIcon: const Icon(Icons.lock_outline),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: const BorderSide(color: Color(0xFFdccccd)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                    borderSide: const BorderSide(color: Color(0xFFff6b6b)),
+                  ),
+                ),
+                obscureText: true,
+              ),
+              const SizedBox(height: 24),
+              // Login Button
+              ElevatedButton(
+                onPressed: () {
+                  // TODO: Implement login functionality
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFFff6b6b),
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: const Text(
+                  'Login',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ),
+              const SizedBox(height: 16),
+              // Forgot Password
+              TextButton(
+                onPressed: () {
+                  // TODO: Implement forgot password functionality
+                },
+                child: const Text(
+                  'Forgot Password?',
+                  style: TextStyle(color: Color(0xFFff6b6b)),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
